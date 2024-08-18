@@ -1,0 +1,11 @@
+{
+  "name": "q2",
+  "version": "1.0.0",
+  "description": "Q2 for TEST1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
