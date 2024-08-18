@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organic Natural Food</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Organic Natural Food</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home">
+        <h2>Welcome to Our Organic Food Store</h2>
+        <p>Fresh, organic, and natural food products for a healthier lifestyle.</p>
+        <form id="homeForm">
+            <label for="homeName">Name:</label>
+            <input type="text" id="homeName" name="homeName" required>
+            <label for="homeEmail">Email:</label>
+            <input type="email" id="homeEmail" name="homeEmail" required>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are committed to providing high-quality organic products sourced from sustainable farms.</p>
+    </section>
+    
+    <section id="products">
+        <h2>Our Products</h2>
+        <div class="filter">
+            <button class="filter-btn" onclick="filterProducts('all')">All</button>
+            <button class="filter-btn" onclick="filterProducts('apples')">Apples</button>
+            <button class="filter-btn" onclick="filterProducts('carrots')">Carrots</button>
+        </div>
+        <div class="product-grid">
+            <div class="product" data-category="apples" onclick="openModal('apples')">
+                <h3>Organic Apples</h3>
+                <p>Fresh and crisp organic apples.</p>
+                <img src="images/apples.jpg" alt="Organic Apples">
+            </div>
+            <div class="product" data-category="carrots" onclick="openModal('carrots')">
+                <h3>Organic Carrots</h3>
+                <p>Healthy and sweet organic carrots.</p>
+                <img src="images/carrots.jpeg" alt="Organic Carrots">
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <label for="contactName">Name:</label>
+            <input type="text" id="contactName" name="contactName" required>
+            <label for="contactEmail">Email:</label>
+            <input type="email" id="contactEmail" name="contactEmail" required>
+            <label for="contactMessage">Message:</label>
+            <textarea id="contactMessage" name="contactMessage" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <div id="formResponse"></div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 Organic Natural Food. All rights reserved.</p>
+        <div class="social-media">
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+        </div>
+    </footer>
+    
+    <!-- Modal Structure -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <img id="modalImage" src="" alt="">
+            <p id="modalDescription"></p>
+        </div>
+    </div>
+    
+    <!-- EmailJS script -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("q7vx2eTvw1pf-rKF");
+        })();
+    </script>
+    <script src="scripts.js"></script>
+</body>
+</html>
